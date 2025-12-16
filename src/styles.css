@@ -1,9 +1,20 @@
 :root{
   --cut: 0%;
 }
-html,body,#root{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
-.page-root{position:relative;height:100vh;overflow-x:hidden}
-.canvas{position:fixed;inset:0;z-index:0}
+html,body,#root{
+  height:100%;
+  margin:0;
+  font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+
+.page-root{
+  position:relative;
+  height:100vh;
+  overflow-x:hidden
+}
+.canvas{
+  position:fixed;
+  inset:0;
+  z-index:0}
 
 /* Header & Nav */
 .site-nav span{
@@ -93,24 +104,67 @@ html,body,#root{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe 
           mask-composite: exclude;
 }
 .hero-button:hover{
-  color:linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.2) 0%,   /* #ffffff 20% */
-    rgba(255, 255, 255, 0.0) 50%,  /* #ffffff 0%  */
-    rgba(255, 255, 255, 0.2) 100% 
-     );
+  color:#221e1e;
   background:#f0f0f0;
   transform:translateY(-2px);
   box-shadow:0 8px 20px rgba(255,255,255,0.2)
 }
 
 /* Arrow Animation */
-.hero-arrow{pointer-events:none;animation:bounce 2s infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.hero-arrow{
+  width: 58px;
+  height: 58px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 29px;
+  background: rgba(12,14,18,0.45);
+  border: 2px solid rgba(70,77,98,1);
+  box-sizing: border-box;
+  pointer-events: none;
+  animation: bounce 2s infinite;
+}
+
+.hero-arrow::before{
+  /* vertical shaft */
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 19px;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 15px;
+  background: #ffffff;
+  border-radius: 1px;
+  opacity: 0.95;
+}
+
+
+
+@keyframes bounce{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(8px); }
+}
 
 /* Cutoff Text */
-.cutoff-text{position:fixed;top:20vh;left:0;right:0;z-index:20;display:flex;justify-content:center;pointer-events:none}
-.cutoff-text .cut-text{font-size:96px;margin:0;color:white;line-height:0.9;clip-path:inset(calc(100% - var(--cut)) 0 0 0);-webkit-clip-path:inset(calc(100% - var(--cut)) 0 0 0);transition:clip-path 0.32s linear;font-weight:700}
+.cutoff-text{
+  position:fixed;
+  top:20vh;left:0;
+  right:0;z-index:20;
+  display:flex;
+  justify-content:center;
+  pointer-events:none
+}
+.cutoff-text .cut-text{
+  font-size:96px;
+  margin:0;
+  color:white;
+  line-height:0.9;
+  clip-path:inset(calc(100% - var(--cut)) 0 0 0);
+  -webkit-clip-path:inset(calc(100% - var(--cut)) 0 0 0);
+  transition:clip-path 0.32s linear;
+  font-weight:700}
 
 /* mobile */
 @media (max-width:768px){

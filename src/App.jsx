@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Canvas } from '@react-three/fiber'
+import GalaxyBackground from './components/GalaxyBackground'
 import ParticleWave from './components/ParticleWave'
 import Nav from './components/Nav'
 import Header from './components/Header'
@@ -21,7 +22,8 @@ export default function App(){
   return (
     <div className="page-root">
       <Canvas className="canvas" dpr={[1,2]} camera={{ position: [0, 2.5, 7], fov: 45 }}>
-        <color attach="background" args={[0.02,0.02,0.03]} />
+        <color attach="background" args={[0.01, 0.01, 0.015]} />
+        <GalaxyBackground />
         <ParticleWave />
       </Canvas>
 
@@ -44,7 +46,7 @@ export default function App(){
         <h2 className="cut-text">Brand / Logo</h2>
       </div>
 
-      <div style={{height:'200vh'}} />
+      {/* <div style={{height:'100vh'}} /> */}
     </div>
   )
 }
