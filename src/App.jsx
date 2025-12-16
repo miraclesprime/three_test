@@ -42,9 +42,7 @@ export default function App(){
         </div>
       </div>
 
-      <div className="cutoff-text" style={{'--cut': `${cut * 100}%`}}>
-        <h2 className="cut-text">Brand / Logo</h2>
-      </div>
+    
 
       {/* <div style={{height:'100vh'}} /> */}
     </div>
