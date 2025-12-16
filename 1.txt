@@ -1,0 +1,89 @@
+Project Overview: Build a React + Three.js web page with particle effects, scroll animations, and interactive mouse effects.
+
+Core Requirements:
+React + Three.js Setup
+
+Create a React project (Vite recommended for performance)
+Integrate Three.js for 3D graphics
+Set up canvas rendering for particles
+Particle System
+
+Create dynamic particles using Three.js geometry and materials
+'particles system can be create like this
+Create a React component using react‑three‑fiber that renders an animated band of particles similar to a pink‑to‑purple wave across the top of a landing page.
+
+Requirements:
+
+Use a <Canvas> from @react-three/fiber and a ParticleWave child component.
+
+In ParticleWave, create a dense grid of points using THREE.Points (or <points>), with a custom bufferGeometry:
+
+Positions in a flat XZ grid (centered on X = 0).
+
+An additional attribute with a random float per particle to vary motion slightly.
+
+Use a custom shaderMaterial (vertex + fragment shaders, GLSL):
+
+Vertex shader:
+
+Start from the grid positions.
+
+Animate the Y position over time with a smooth wave function based on sin of X and Z plus a uTime uniform (e.g. a combination of 2 sine waves so the band has multiple hills/valleys).
+
+Pass the X position and wave strength to the fragment shader as varyings.
+
+Set a point size of about 2–3 pixels.
+
+Fragment shader:
+
+Use gl_PointCoord so each particle is a soft circular dot (discard pixels outside a radius).
+
+Color the particles with a horizontal gradient from pink on the left to purple on the right, based on the varying X (map X to 0–1).
+
+Use additive blending and an alpha that fades toward the edge of each dot to create a glowing look.
+
+In the React component:
+
+Define uniforms uTime, uAmplitude, uFrequency, and uSpeed for the shaderMaterial.
+
+Use useFrame to increment uTime every frame.
+
+Set transparent: true, depthWrite: false, and AdditiveBlending on the material to mimic a neon particle wave.
+
+Camera / scene:
+
+Dark background color (almost black).
+
+Position the camera so the particle band appears as a wide, horizontal wave across roughly the upper half of the viewport (similar to a hero banner background).
+
+Export the main component so it can be used as a hero background behind regular HTML UI (buttons and text overlaid with CSS).”
+
+'
+Make particles responsive and animated
+Scroll Animation (Cutoff Effect)
+
+Implement text/logo that appears with a "cutoff from the bottom" effect as the user scrolls
+Reference: Study the effect on ashfall.studio - text likely uses clipping or mask techniques
+Use scroll event listeners to trigger animations
+Mouse Interaction
+
+Track mouse movement coordinates
+Apply mouse position to particle movement/rotation
+Consider using raycasting or position-based calculations
+Navigation Text Scramble (Optional Plus)
+
+Add hover effect to nav items that scrambles/distorts text
+Reference: Similar to kprverse.com text animation
+Use canvas text rendering or DOM manipulation with character randomization
+Tech Stack:
+Frontend: React
+3D Graphics: Three.js
+Build Tool: Vite (faster than CRA)
+Animation: Three.js built-in or GSAP
+Styling: CSS/Tailwind or styled-components
+Key Implementation Steps:
+Set up React + Three.js canvas
+Build particle system with proper performance optimization
+Implement scroll detection and text clipping masks
+Add mouse tracking for particle reactions
+Create navigation hover scramble effect (optional)

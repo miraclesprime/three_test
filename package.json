@@ -1,0 +1,20 @@
+{
+  "name": "particle-wave-hero",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host 172.16.98.6",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.159.0",
+    "@react-three/fiber": "^8.13.4"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

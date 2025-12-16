@@ -1,0 +1,10 @@
+layout should be like 1.png file.
+
+Tasks:
+1) Implement the page using React+three.js
+2) Adaptability should be at your discretion.
+3) Make the text and logo appear with a cutoff from the bottom like on this site when scrolling https://ashfall.studio/
+As you can see layout, there are many particles.
+An additional plus would be:
+make the particles dynamic and additionally so that they somehow react to mouse movement.
+An additional plus would be to add a mouseover scramble effect to the navigation like here https://kprverse.com/ (you can not take the background from there, only the text animation)

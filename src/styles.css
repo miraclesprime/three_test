@@ -1,0 +1,33 @@
+:root{
+  --cut: 0%;
+}
+html,body,#root{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+.page-root{position:relative;height:100vh;overflow-x:hidden}
+.canvas{position:fixed;inset:0;z-index:0}
+
+/* Header & Nav */
+.site-nav span{transition:all 160ms ease}
+.site-nav li:hover span{transform:translateY(-2px);color:#ff79c6}
+.site-nav li{pointer-events:auto}
+
+/* Hero Section */
+.hero-section{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:20;text-align:center;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:20px}
+.hero-text{color:white;pointer-events:auto}
+.hero-subtitle{font-size:48px;margin:0;font-weight:600;line-height:1.2;max-width:600px;letter-spacing:-0.8px}
+.hero-button{background:white;color:#000;border:none;padding:14px 32px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;transition:all 200ms ease;letter-spacing:0.5px;text-transform:uppercase}
+.hero-button:hover{background:#f0f0f0;transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,255,255,0.2)}
+
+/* Arrow Animation */
+.hero-arrow{pointer-events:none;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* Cutoff Text */
+.cutoff-text{position:fixed;top:20vh;left:0;right:0;z-index:20;display:flex;justify-content:center;pointer-events:none}
+.cutoff-text .cut-text{font-size:96px;margin:0;color:white;line-height:0.9;clip-path:inset(calc(100% - var(--cut)) 0 0 0);-webkit-clip-path:inset(calc(100% - var(--cut)) 0 0 0);transition:clip-path 0.32s linear;font-weight:700}
+
+/* mobile */
+@media (max-width:768px){
+  .hero-subtitle{font-size:32px}
+  .hero-button{padding:12px 24px;font-size:13px}
+  .cutoff-text .cut-text{font-size:48px}
+}
