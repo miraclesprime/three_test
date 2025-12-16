@@ -30,7 +30,8 @@ html,body,#root{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe 
   flex-direction:column;
   align-items:center;
   gap:20px;
-  backdrop-filter: blur(12px);}
+  /* backdrop-filter: blur(12px); */
+}
 
 .hero-text{
   color:white;
@@ -82,12 +83,7 @@ html,body,#root{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe 
   inset: 0;
   clip-path: inherit;
   padding: 2px; /* same as border */
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.2) 0%,   /* #ffffff 20% */
-    rgba(255, 255, 255, 0.0) 50%,  /* #ffffff 0%  */
-    rgba(255, 255, 255, 0.2) 100%  /* #ffffff 20% */
-  );
+  background: rgba(255, 255, 255, 0.1);
   pointer-events: none;
 
   -webkit-mask:
@@ -96,7 +92,17 @@ html,body,#root{height:100%;margin:0;font-family:system-ui,-apple-system,'Segoe 
   -webkit-mask-composite: xor;
           mask-composite: exclude;
 }
-.hero-button:hover{background:#f0f0f0;transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,255,255,0.2)}
+.hero-button:hover{
+  color:linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2) 0%,   /* #ffffff 20% */
+    rgba(255, 255, 255, 0.0) 50%,  /* #ffffff 0%  */
+    rgba(255, 255, 255, 0.2) 100% 
+     );
+  background:#f0f0f0;
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(255,255,255,0.2)
+}
 
 /* Arrow Animation */
 .hero-arrow{pointer-events:none;animation:bounce 2s infinite}
