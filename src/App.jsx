@@ -30,8 +30,8 @@ export default function App(){
 
       <div className="hero-section">
         <div className="hero-text">
-          <p className="hero-subtitle">Building the future of medicine with ai</p>
           <button className="hero-button">Start Today</button>
+          <p className="hero-subtitle">Building the future of medicine with AI</p>
         </div>
         <div className="hero-arrow">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">

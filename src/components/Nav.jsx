@@ -26,8 +26,8 @@ export default function Nav({items = ['Solutions','Technology','About','Careers'
   const setTextAt = (idx, val)=> setTexts(s=>{ const copy=[...s]; copy[idx]=val; return copy })
 
   return (
-    <nav className="site-nav" style={{position:'fixed',top:18,right:40,zIndex:30}}>
-      <ul style={{display:'flex',gap:28,listStyle:'none',margin:0,padding:0}}>
+    <nav className="site-nav" style={{position:'fixed',top:72,right:80,zIndex:30}}>
+      <ul style={{display:'flex',gap:50,listStyle:'none',margin:0,padding:0}}>
         {items.map((it, i)=> (
           <li key={i} style={{cursor:'pointer'}}
             onMouseEnter={()=> scrambleText(null, it, (v)=> setTextAt(i,v))}
