@@ -9,10 +9,11 @@
     "preview": "webpack serve --mode production"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.13.4",
+    "copy-webpack-plugin": "^13.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.159.0",
-    "@react-three/fiber": "^8.13.4"
+    "three": "^0.159.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",

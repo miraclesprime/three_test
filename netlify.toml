@@ -1,8 +1,8 @@
-echo "[build]" > netlify.toml
-echo "publish = \"dist\"" >> netlify.toml
-echo "command = \"npm run build\"" >> netlify.toml
-echo "" >> netlify.toml
-echo "[[redirects]]" >> netlify.toml
-echo "from = \"/*\"" >> netlify.toml
-echo "to = \"/index.html\"" >> netlify.toml
-echo "status = 200" >> netlify.toml
+[build]
+	publish = "dist"
+	command = "npm run build"
+
+[[redirects]]
+	from = "/*"
+	to = "/index.html"
+	status = 200
